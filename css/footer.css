@@ -1,0 +1,38 @@
+.btn-outline1 {
+    margin-top: 15px;
+    border: solid 2px #fff;
+    font-size: 20px;
+    color:#fff;
+	width:100%;
+	font-weight:300;
+	transition: all 0.5s ease-in-out;/* 过度效果 */
+}
+.btn-outline1:hover,
+.btn-outline1:focus,
+.btn-outline1:active {
+    border: solid 2px #fff;
+    color:#A29D26;
+    background:#fff;
+}  
+.btn-outline1 {
+	padding: 11px 50px;
+    font-size: 21px;
+    width: 100%;
+	background-color: rgba(0, 0, 0, 0.22);
+}
+.btn-outline {
+	margin-top:8px;
+    border: solid 1px #fff;
+    font-size: 18px;
+    padding: 5px 10px;
+    background:rgba(0, 0, 0, 0.45);
+	width: 100%;
+	transition: all 0.5s ease-in-out;
+}
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active {
+    border: solid 1px #fff;
+    color: #000;
+    background: #fff;
+}

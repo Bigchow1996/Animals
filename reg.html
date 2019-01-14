@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- 声明网页的编码集合,国际字符集合,更通用  -->
+		<meta charset="UTF-8">
+		<!-- 网页标题  -->
+		<title>添加用户</title>
+		<style type="text/css">
+			html{
+				width: 100%;
+				height: 100%;
+			}
+			body{
+				background-color: black;
+				background-image: url(images/reg.jpg);
+				background-repeat: no-repeat;
+				background-size: cover;
+				
+			}
+			form{
+				width:400px;
+				margin: 250px auto;
+				text-align:center;
+			}	
+			
+			form fieldset{
+				background:#fff;
+				box-shadow:0px 0px 15px 1px #5D5858;
+				border-radius:3px ;
+				border:none;
+				padding:20px;	
+			}
+			form input{
+				border: 1px solid #ccc;
+				border-radius: 3px;
+				margin-bottom: 10px;
+				width: 100%;
+				box-sizing: border-box;
+				font-family: "楷体";
+				font-size: 18px;
+				padding: 15px;
+			}
+			.submit{
+				font-family: "微软雅黑";
+				font-size: 20px;
+				cursor: pointer;
+			}
+			.div1{
+				font-family: "微软雅黑";
+				font-size: 16px;
+			}
+			.div1 a{
+				text-decoration: none;
+				color: #000000;
+			}
+			.a1{
+				margin-right: 134px;
+			}
+			.div3 p{
+				text-align: center;
+				font-size:18px;
+				color: black;
+				font-family: "微软雅黑";
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<form action = "logincheck.php?act = login" method = "post">
+			<fieldset>
+				<h2>管理员登陆</h2>
+				<input type="text" name="username" placeholder="用户名" />
+				<input type="password" name="password"  placeholder="密码" />
+				<input type="submit" class="submit" name="submit" value="登陆" />
+				<div class="div1"><a class="a1" href="index.html">返回首页</a><a class="a2" href="#">忘记密码</a></div>
+			</fieldset>
+		</form>
+		<div class="div3">
+			<p>
+	         Copyright&nbsp;©&nbsp;2017&nbsp;hainananimals.com,All rights reserved.<a href = "http://www.miitbeian.gov.cn">琼ICP备17001532号</a>
+	        </p>
+		</div>
+	</body>
+</html>

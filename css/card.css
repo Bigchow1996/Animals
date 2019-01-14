@@ -1,0 +1,71 @@
+body{ font-family: 'Microsoft YaHei';}
+.profile {
+    width: 30px;
+    height: 30px;
+}
+span{
+	color: blue;
+}
+.hovercard {
+    display: none;
+	position:absolute;
+	z-index:100;
+    width: 250px;
+    height: 240px;
+    padding: 70px 20px 20px 20px;
+}
+.hovercontent {
+    background: #eee;
+    width: 250px;
+    height: 240px;
+    border-radius: 5px;
+}
+.a-upload {
+    padding: 4px 10px;
+    height: 30px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #888;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+
+.a-upload  input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+.a-upload:hover {
+    color: #444;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none
+}
+#userphoto{
+	position:relative;
+	top:10px;
+}
+@media screen and (max-width:750px) {
+	#userphoto{
+		position:relative;
+		top:0px;
+		left:8%;
+	}
+}
+.table th, .table td { 
+
+	text-align: center; 
+
+}
+

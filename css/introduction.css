@@ -1,0 +1,142 @@
+.content{
+	padding:4em 0 5em 0;
+}
+.center-head h3{
+	color:#b28b51;
+	font-size:2.5em;
+	margin-bottom:6px;
+	font-family: 'Marvel-Regular';
+	font-weight:700;
+}
+.center-head span{
+	display:inline-block;
+	width:10%;
+	background:#b28b51;
+	height:2px;
+}
+.panel-default .panel-heading {
+  	color: #999;
+    background:url(../images/pls.png) no-repeat 7px 11px #fff;
+	padding: 10px 30px;
+}
+.panel-body {
+  padding:7px 20px 13px;
+  color: #777;
+  line-height: 1.8em;
+  font-size: 0.9em;
+}
+.panel-title a:hover {
+  color: #b28b51;
+  text-decoration: none;
+}
+.panel-group {
+  margin-bottom:0px;
+  margin-top: 2em;
+}
+.wrap{
+	margin-top:2.1em;
+	width: 850px;
+	height: 409px;
+	border: 2px solid rgba(51,51,51,0.5);
+	border-radius: 4px;
+	box-shadow: 1px 1px 1px 1px #C5C2B8;
+}
+.wrap ul{
+	width: 850px;
+	height: 340px;
+	padding: 0px;
+	margin: 0px;
+}
+.wrap span{
+	display: block;
+	width: 200px;
+	height: 70px;
+	
+}
+.wrap ul li{
+	width: 200px;
+	height: 300px;
+	margin-top: 20px;
+	margin-left: 10px;
+	float: left;
+	list-style: none;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 1px 1px 1px 1px #C5C2B8;
+}
+.wrap ul li img{
+	width: 200px;
+	height: 300px;
+}
+.wrap ul li div{
+	 width: 200px;
+	 height: 300px;
+	 text-align: center;
+	 position: absolute;
+	 background-color: rgba(0,0,0,1);
+	 opacity: 0;  
+	 /* 褰撻紶鏍囩寮�iv鍚�锛岃儗鏅灛闂村彉涓篵ackground-color: rgba(0,0,0,1);鐒跺悗鍐嶉�娓愬彉涓洪�鏄巓pacity: 0; */
+}
+.wrap ul li div h1{
+	margin: 0;
+	padding-top: 100px;
+	font-family: "寰蒋闆呴粦";
+	font-size: 20px;
+}
+.wrap ul li div p{
+	font-family: "寰蒋闆呴粦";
+	text-align:left;
+	font-size: 16px;
+	text-indent:2em;
+}
+.wrap ul li:hover div{
+	background-color: rgba(0,0,0,0.5);/*杩欓噷搴旇鏄灛闂村氨寰楄揪鍒拌繖绉嶆晥鏋�涓嶈兘鍦ㄨ繖閲岄潰鍔爐ransition*/
+	opacity: 1;
+	color: #CCCCCC;
+}
+.wrap li:first-child div {
+	transition:top 0.6s ease-in-out,opacity 0.6s ease-in-out; 
+	left: 0;
+	top: 300px;
+}
+.wrap li:nth-child(2) div {
+	transition: left 0.6s ease-in-out,opacity 1s ease-in-out;
+	left: -200px;
+	top: 0;
+}
+.wrap li:nth-child(3) div {
+	transition: top 0.6s ease-in-out,opacity 1s ease-in-out;
+	left: 0;
+	top: -300px;
+}
+
+.wrap li:last-child div {
+	transition: left 0.6s ease-in-out,opacity 1s ease-in-out; 
+	left: 200px;
+	top: 0;
+}
+.wrap ul li:first-child:hover  div{
+	transition:top 0.6s ease-in-out; 
+	top: 0px;
+}
+.wrap ul li:nth-child(2):hover  div{
+	transition: left 0.6s ease-in-out;
+	left: 0px;
+}
+.wrap ul li:nth-child(3):hover div{
+	transition: top 0.6s ease-in-out;
+	top: 0px;
+}
+.wrap ul li:last-child:hover  div{
+	transition: left 0.6s ease-in-out; 
+	left: 0px;
+}
+.wrap span{
+	display: block;
+	width: 100%;
+	text-align: center;
+	line-height: 65px;
+	font-size: 25px;
+	border-top:  2px solid rgba(51,51,51,0.5);
+	font-family: "妤蜂綋";
+}

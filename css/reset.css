@@ -1,0 +1,26 @@
+ul,li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+/* start site common */
+body,div,span,a,li {
+	font-family:"微软雅黑";
+	font-size: 14px;
+}
+
+
+a:hover {
+	color: #000;
+}
+
+/* start clearfix */
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	line-height: 0;
+	clear: both;
+	visibility: hidden; /*元素仍占据其本来的空间*/
+}
+

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>海南动物资料网</title>
+    <link rel="shortcut icon" href="./favicon.ico" />	
+    <!-- banner header header-top introduction font_logo data cd-top footer-->
+	<link rel="stylesheet" type="text/css" href="css/introduction.css"/>
+	<link rel="stylesheet" type="text/css" href="css/cd-top.css"/>
+	<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+		body{
+			padding-top:0px;
+			padding-bottom:0px;
+		}
+		.ban{
+			width:100%;
+			height:100%;
+			rgba:rgba(52, 52, 52, 0.5);
+		}
+	</style>
+  </head>
+  <body>
+  	<div class="header">
+  			<div class="logo">	
+				<img alt="" src="images/logo.png">								
+			</div>
+			<div class="container"><!-- 这里类名不能乱改 因为是用的bootstrape框架-->
+				<div class="top-menu col-md-9 col-md-push-1">
+					<span class="menu"><img src="images/menu.png" alt=""></span>
+				 	<ul class="nav1 ">
+						<li class="active"><a href="index.html">首页</a></li>
+						<li><a href="animals.php">动物</a></li>
+						<li><a href="document.php">资料</a></li>
+						<li><a href="#about">交流</a></li>
+						<li><a href="#contact">关于</a></li>
+				 	</ul>
+				</div>
+				<script>
+				 $( "span.menu" ).click(function() {
+				 $( "ul.nav1" ).slideToggle(400);
+				 // 当屏幕处于移动端小平显示的时候，我点击菜单图标，就会显示下拉菜单.
+				 });
+				</script>
+				<div class="search col-md-2">					
+					<form action="Search.php" method="post">
+						<input type="text" value="" placeholder="Search...">
+						<input type="submit" value="">
+					</form>					
+				</div>
+				<div class="reg col-md-1">
+					<a href="reg.html" target="_blank"><span class="glyphicon glyphicon-user"></span>管理员</a>
+				</div>
+				<div class="clearfix"></div>	
+			</div>
+		</div>
+  	<!--
+      	作者：1365003673@qq.com
+      	时间：2017-03-05
+      	描述：banner图片轮播
+      -->
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+	    <ol class="carousel-indicators">
+	        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	        <li data-target="#myCarousel" data-slide-to="1"></li>
+	        <li data-target="#myCarousel" data-slide-to="2"></li>
+	    </ol>
+	    <div class="carousel-inner" role="listbox">
+	        <div class="item active">
+				<img class="first-slide" src="images/banner_slide_01.jpg">
+	        </div>
+	        <div class="item">
+				<img class="second-slide"  src="images/banner_slide_02.jpg">
+	        </div>
+	        <div class="item">
+				<img class="third-slide" src="images/banner_slide_03.jpg">
+	        </div>
+	    </div>
+	    <div class="clearfix"></div>
+	    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+	        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	        <span class="sr-only">Previous</span>
+	    </a>
+	    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+	        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	        <span class="sr-only">Next</span>
+	    </a>
+		</div>
+		<!--
+        	作者：1365003673@qq.com
+        	时间：2017-03-07
+        	描述：网站的一些精美推送（中部）
+        -->
+		<div class="content" id="data" name='data'>
+		 	<div class="container">
+			 	<div class="content-grids">
+				 	<div class="col-md-3 content-left">
+					  	<div class="center-head">
+						  <h3>文章</h3>
+						  <span></span>
+					  	</div>
+					  	<!--声明一个选择折叠项的布局 role可以不加，其主要是给外部设备看到，如盲人阅读器-->  
+					 	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+						  	<!--这是每个选择折叠项的标题样式，有panel-default/info/success/warning/danger任选择--> 
+						  	<div class="panel panel-default">
+						  		<!--声明一个标题部分的布局-->  
+								<div class="panel-heading" >
+							  		<!--标题字体可以通过样式修饰--> 
+							  		<h4 class="panel-title">
+							  			<!--这么多参数的超级链接是根据bootstrap的中文文档添加的，为能够正确打开每一个选择折叠项做准备-->
+										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								  			海南动物有多少种
+										</a>
+							  		</h4>
+								</div>
+								<!--这是为了tab快捷键能够在选择折叠项之间切换做准备，-->  
+	              				<!--其中class="panel-collapse collapse"默认是关闭状态，class="panel-collapse collapse in"则默认为打开状态，-->  
+								<!--每个总的选择折叠项，只能有一个class="panel-collapse collapse in"。--> 
+								<div id="collapseOne" class="panel-collapse collapse in">
+								<!--选择折叠项主体的布局，中间能够放入任何东西-->
+									<div class="panel-body">
+										&nbsp;&nbsp;海南有648种陆栖脊椎动物，其中两栖类44种，占全国的18.8%；爬行类108种，占全国的33%；鸟类420种，占全国的36.1%；
+										兽类76种，占全国的18.6%，其中21种为海南所特有，海南省列入国家一、二级重点保护的野生动物有102种，其中一级保护动物有海南坡鹿、海南长臂猿、云豹、巨蜥、海南山鹧鸪等15种，二级保护动物87种。省级保护野生动物有206种。
+								  	</div>
+								</div>
+							</div>
+						  	<!--下面的每一个选择折叠项的道理是完全一样的，不再赘述-->  
+							<div class="panel panel-default">
+								<div class="panel-heading">
+								  	<h4 class="panel-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									  		兽类
+										</a>
+								  	</h4>
+								</div>
+								<div id="collapseTwo" class="panel-collapse collapse">
+								    <div class="panel-body">
+										海南的兽类动物分属8目24科76种，分别占全国12个目的66.7％，51个科的46.6％，421种的18.1％。其中，食虫目有3科6种，翼手目有6科26种，灵长目有3科3种，食肉目有4科14种，啮齿目有4科21种，偶蹄目有2科4种。此外，还有鳞甲目鲮鲤科的穿山甲，兔形目兔科的海南兔。
+								    </div>
+								  	<div class="panel-body">
+										（一）海南特有的兽类动物海南坡鹿、海南黑冠长臂猿、海南兔、海南毛猬、海南缺齿鼹、中麝鼯、海南小麝鼯、大菊头蝠、海南菊头蝠、小菊头蝠、保亭蹄蝠、双色蹄蝠、普通伏翼、东方伏翼、保亭伏翼、大黄蝠、大长翼蝠、海南小獭、红颊獴、海南鼯鼠、纸泡鼯鼠等21种。
+								  	</div>
+								  	<div class="panel-body">
+										（二）国家级、省级保护野生兽类动物
+										被列为国家级和省级保护的海南野生动物兽类有27种。
+										国家一级保护动物海南长臂猿（黑冠长臂猿）、云豹、儒艮、中华白海豚、海南坡鹿等5种。
+										国家二级保护动物  猕猴、穿山甲、黑熊、海南水獭（水狗）、小爪水獭（水獭）、黄喉貂、海南大灵猫（五间狸）、小灵猫（七间狸）、座头鲸、抹香鲸、红豚（海猪）、水鹿（山马）、海南巨松鼠（树狗）等13种。
+										省级保护动物  海南豹猫（金钱狸）、椰子猫（黑脚狸）、海南果子狸（花面狸）、红颊猿（日狸）、毛耳飞鼠、豪猪（箭猪）、赤麂（黄猄）、树鼯等8种。
+								  	</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading" >
+								    <h4 class="panel-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									   		爬行类
+										</a>
+								    </h4>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse">
+								    <div class="panel-body">
+ 										海南省爬行类动物分属3目45种，其中龟鳖目有10种，蜥蜴目有6种，蛇目有29种。被列为国家级和省级保护野生动物爬行类有26种。								  
+ 									</div>
+									<div class="panel-body">
+										（一）国家级保护爬行类动物
+										    国家一级保护的有鼋、巨蜥（四脚蛇）、蟒（南蛇）、红珊瑚、库氏砗磲、鹦鹉螺等6种。
+										    国家二级保护的有地龟、三线闭壳龟（金钱龟）、凹甲陆龟、蠵龟、绿海龟、玳瑁、山瑞鳖、大壁虎、冠螺、虎斑宝贝、大珠母贝等11种。
+									</div>
+									<div class="panel-body">
+										（一）国家级保护爬行类动物
+										    国家一级保护的有鼋、巨蜥（四脚蛇）、蟒（南蛇）、红珊瑚、库氏砗磲、鹦鹉螺等6种。
+										    国家二级保护的有地龟、三线闭壳龟（金钱龟）、凹甲陆龟、蠵龟、绿海龟、玳瑁、山瑞鳖、大壁虎、冠螺、虎斑宝贝、大珠母贝等11种。
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+							  		<h4 class="panel-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+								  			两栖类
+										</a>
+							  		</h4>
+								</div>
+								<div id="collapseFour" class="panel-collapse collapse">
+								    <div class="panel-body">
+										（一）海南特有两栖动物
+										    海南的两栖类动物有37种。其中，海南瑞蛙、海南树蛙、头盔蟾蜍、花狭口蛙、鳞皮游蟾、琉球庞螈、东南亚拟髭蟾、海蛙（食蟹蛙）、脆皮蛙、小瑞蛙、细刺蛙等11种为海南特有动物。
+								    </div>
+								    <div class="panel-body">
+										（二）国家级保护两栖动物
+  										  被列为国家级保护的海南野生两栖动物有9种，其中国家二级保护的有虎纹蛙（青蛙、田鸡）、花鳗鲡等2种。
+								    </div>
+								     <div class="panel-body">
+										（二）国家级保护两栖动物
+  										  被列为国家级保护的海南野生两栖动物有9种，其中国家二级保护的有虎纹蛙（青蛙、田鸡）、花鳗鲡等2种。
+								    </div>
+								</div>
+						    </div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+								    <h4 class="panel-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+										  鸟类
+										</a>
+								    </h4>
+								</div>
+								<div id="collapseFive" class="panel-collapse collapse" >
+								   <div class="panel-body">
+										海南的鸟类有20个目59个科344种。其中，潜鸟目有潜鸟科的红喉潜鸟，目有科的小（水葫芦、小王八），鹦形目有鹦鹉科的绯胸鹦鹉，咬鹃目有咬鹃科的红头咬鹃；鹈形目有3科3种，鹳形目有1科8种，雁形目有1科8种，隼形目有21科27种，鸡形目有1科7种，鹤形目有2科11种，鸻形目有5科43种，鸥形目有1科11种，鸽形目有1科11种，鹃形目有1科13种，鸮形目有2科9种，夜鹰目有1科3种，雨燕目有1科4种，佛法僧目有3科12种，形目有2科9种，雀形目有21科146种。被列为国家级、省级保护的鸟类动物有72种。								   
+								   </div>
+								   <div class="panel-body">
+									（一）国家级保护鸟类动物
+									    国家一级保护的有朱鹮、海南山鹧鸪（山赤姑）、孔雀雉（金钱鸡）等3种。
+									    国家二级保护的有斑嘴鹈鹕、褐鲣鸟、黄嘴白鹭、岩鹭、海南虎斑鸦、彩鹳、海南兔、白鹮鹗、黑脸琵鹭、褐冠鹃隼、凤头鹃隼、蜂鹰、鸢（老鹰）、褐耳鹰（棕耳苍鹰）、赤腹鹰（鸽子鹰）、凤头鹰（凤头雀鹰）、雀鹰（朵子）、松雀鹰（松子鹰）、普通鵟、灰脸鵟鹰（鹣鸠）、鹰鵰、草原鵰、白腹山鵰、棕腹隼鵰、林鵰、白腹海鵰、渔鵰、白尾鹞（鸡鵟）、草原鹞、鹊鹞、白头鹞（泽鵟）、蛇鵰、鹗、游隼、猛隼、红隼、白鹇、原鸡（山鸡）、灰鹤、小青脚鹬、红翅绿鸠、厚嘴绿鸠（粗嘴绿鸠）、橙胸绿鸠、绿皇鸠、山皇鸠、斑尾鹃鸠、绯胸鹦鹉（英哥）、褐翅鸦鹃（大毛鸡）、小鸦鹃（小尾鸡）、粟鸮（猫头鹰）、黄嘴角鸮、领角鸮、褐鱼鸮、领鹃鹇、斑头鸺鹣（猫王鸟）、鹰鸮、褐林鸮（猫头鹰）、短耳鸮、灰喉针尾雨燕、银胸丝冠鸟（海南宽嘴）、蓝背八色鸫、蓝翅八色鸫等61种。
+								   </div>
+								   <div class="panel-body">
+									（二）省级保护鸟类动物
+                                                                                                  省级保护的有八哥（了哥）、鹩哥、金丝燕、鹧鸪（赤姑）、山斑鸠、珠颈斑鸠（珍珠鸠）、火斑鸠、绿背金鸠等8种								
+								   </div>
+								</div>
+							 </div>					   			  
+						</div>
+					</div>
+					<div class="col-md-9 content-right">
+						<div class="center-head">
+							<h3>动物概况</h3>
+							<span></span>
+						</div>
+						<div id="main" style="width:100%;height:650px;"></div>
+						<script type="text/javascript">
+					        // 基于准备好的dom，初始化echarts实例
+					        var myChart = echarts.init(document.getElementById('main'));
+					
+					        // 指定图表的配置项和数据
+					        option = {
+							    title : {
+							        text: '保护动物概况',
+							        subtext: '2015年',
+							        x:'center'
+							    },
+							    tooltip : {
+							        trigger: 'item',
+							        formatter: "{a} <br/>{b} : {c} ({d}%)"
+							    },
+							    legend: {
+							        orient: 'vertical',
+							        left: 'left',
+							        data:['两栖类','爬行类','兽类','鸟类','国家一级保护兽类','国家二级保护兽类','省级保护兽类','国家一级保护爬行类','国家二级保护爬行类','省保护爬行类','国家一级保护两栖类','国家二级保护两栖类','省保护两栖类','国家一级保护鸟类','国家二级保护鸟类','省级保护鸟类']
+							    },
+							    toolbox: {
+							        show : true,
+							        feature : {
+							            mark : {show: true},
+							            dataView : {show: true, readOnly: false},
+							            magicType : {
+							                show: true,
+							                type: ['pie', 'funnel']
+							            },
+							            restore : {show: true},
+							            saveAsImage : {show: true}
+							        }
+							    },
+							    series : [
+							        {
+							            name: '访问来源',
+							            type: 'pie',
+							            radius : '55%',
+							            center: ['50%', '60%'],
+							            data:[
+								                {value:5, name:'国家一级保护兽类'},
+								                {value:13, name:'国家二级保护兽类'},
+								                {value:8, name:'省级保护兽类'},
+								                {value:6, name:'国家一级保护爬行类'},
+								                {value:11, name:'国家二级保护爬行类'},
+								                {value:9, name:'省保护爬行类'},
+								                {value:7, name:'国家一级保护两栖类'},
+								                {value:2, name:'国家一级保护两栖类'},
+								                {value:7, name:'省保护两栖类'},
+								                {value:3, name:'国家一级保护鸟类'},
+								                {value:61, name:'国家二级保护鸟类'},
+								                {value:8, name:'省级保护鸟类'}
+								            ],
+							            itemStyle: {
+							                emphasis: {
+							                    shadowBlur: 10,
+							                    shadowOffsetX: 0,
+							                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+							                }
+							            }
+							        }
+							    ]
+							};
+					        // 使用刚指定的配置项和数据显示图表。
+					        myChart.setOption(option);
+					    </script>
+					    <div id="main1" style="width:100%;height:400px;"></div>
+					    <script type="text/javascript">
+					        // 基于准备好的dom，初始化echarts实例
+					        var myChart = echarts.init(document.getElementById('main1'));
+					
+					        // 指定图表的配置项和数据
+					        option = {
+							    title : {
+							        text: '野生动物概况',
+							        subtext: '2015年',
+							        x:'center'
+							    },
+							    tooltip : {
+							        trigger: 'item',
+							        formatter: "{a} <br/>{b} : {c} ({d}%)"
+							    },
+							    legend: {
+							        orient: 'vertical',
+							        left: 'left',
+							        data: ['两栖类','爬行类','兽类','鸟类']
+							    },
+							    toolbox: {
+							        show : true,
+							        feature : {
+							            mark : {show: true},
+							            dataView : {show: true, readOnly: false},
+							            magicType : {
+							                show: true,
+							                type: ['pie', 'funnel']
+							            },
+							            restore : {show: true},
+							            saveAsImage : {show: true}
+							        }
+							    },
+							    series : [
+							        {
+							            name: '访问来源',
+							            type: 'pie',
+							            radius : '55%',
+							            center: ['50%', '60%'],
+							            data:[
+							                {value:44, name:'两栖类'},
+							                {value:108, name:'爬行类'},
+							                {value:76, name:'兽类'},
+							                {value:420, name:'鸟类'}
+							            ],
+							            itemStyle: {
+							                emphasis: {
+							                    shadowBlur: 10,
+							                    shadowOffsetX: 0,
+							                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+							                }
+							            }
+							        }
+							    ]
+							};
+					        // 使用刚指定的配置项和数据显示图表。
+					        myChart.setOption(option);
+					    </script>
+					<div class="clearfix"></div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<!-- 关于 -->
+    <section class="our-contacts slideanim" id="about" style="background-image: url(images/11.jpg);background-position: 100% 50% 50% 50%;background-attachment: fixed;background-size: cover;"><br><br><br>
+	<p style="text-align:center;font-size: 2.5em;">联系我们</p><br><br><br>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<form onsubmit="return PostData()">
+					<div class="row">
+						<div class="form-group col-lg-4 slideanim">
+							<input type="text" name="name" class="form-control user-name" style="background-color: rgba(255,255,255,0.6);font-size: 1em;" placeholder="你的名字"  required/>
+						</div>
+						<div class="form-group col-lg-4 slideanim">
+							<input type="email" name="mail" class="form-control mail" style="background-color: rgba(255,255,255,0.6);font-size: 1em;"placeholder="你的邮箱" required/>
+						</div>
+						<div class="form-group col-lg-4 slideanim">
+							<input type="tel" name="photo" class="form-control pno" style="background-color: rgba(255,255,255,0.6);font-size: 1em;"placeholder="你的电话号码" required/>
+						</div>
+						<div class="clearfix"></div>
+						<div class="form-group col-lg-12 slideanim">
+							<textarea class="form-control" name="info" rows="6"style="background-color: rgba(255,255,255,0.5);font-size: 1em;" placeholder="你的意见" required/></textarea>
+						</div>
+						<div class="form-group col-lg-12 slideanim"><br><br>
+							<button type="submit" class="btn-outline1">提交</button><br><br><br>
+						</div>
+					</div>
+				</form>
+				<script>
+				    function PostData() {
+				        $.ajax({
+				            type: "POST",
+				            url: "add_data/add_information.php",
+				            data : "",
+				            success: function(msg) {
+				            	alert('谢谢您的宝贵意见,但是我还是想让您加入我们↓↓↓↓');
+				            }
+				        });
+				        return false;
+				    }
+				</script>
+			</div>	
+		</div>
+	</div>
+</section>
+<!-- /Contact Section -->
+<!-- Footer Section -->
+<section class="our-contacts slideanim" id="contact" style="background-color: #222; color: white;"><br><br><br>
+	<p style="text-align:center;font-size: 2.5em;font-weight: 500;">关于我们</p>
+	<hr>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 footer-left">
+				<h4 style="font-weight: 500; ">联系信息</h4>
+				<div class="contact-info">
+					<div class="address" style="font-family: '迷你简中等线';">	
+						<i class="glyphicon glyphicon-globe"></i>
+						<p class="p3">海南师范大学</p>
+						<p class="p4">桂林洋校区</p>
+					</div>
+					<div class="phone">
+						<i class="glyphicon glyphicon-phone-alt"></i>
+						<p class="p3">15708997715</p>
+						<p class="p4">15289831731</p>
+					</div>
+					<div class="email-info">
+						<i class="glyphicon glyphicon-envelope"></i>
+						<p class="p3">2287668894@qq.com</p>
+						<p class="p3">1365003673@qq.com</p>
+						<p class="p3">1643577750@qq.com</p>
+					</div>
+				</div>
+			</div><!-- col -->
+			<div class="col-md-4 footer-center" >
+				<h4>通讯</h4>
+				<p style="font-family: '迷你简中等线';">注册我们的通讯，及时为您发送我们内容的更新提示</p>
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<label for="inputEmail1" class="col-lg-4 control-label"></label>
+						<div class="col-lg-10">
+							<input type="email" class="form-control" id="inputEmail1" placeholder="邮箱" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="text1" class="col-lg-4 control-label"></label>
+						<div class="col-lg-10">
+							<input type="text" class="form-control" id="text1" placeholder="你的名字" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-lg-10">
+							<button type="submit" class="btn-outline" >登陆</button>
+						</div>
+					</div>
+				</form><!-- form -->
+			</div><!-- col -->
+			<div class="col-md-4 footer-right">
+				<h4>支持我们</h4>
+				<p style="font-family: '迷你简中等线';">海南省动物网站，为您提供大量丰富的动物资源，帮助您更加了解海南省的动物信息，也欢迎您的支持，让我们一起分享海南省奇妙的动物世界</p>
+			</div><!-- col -->
+		</div><!-- row -->
+	</div><!-- container -->
+	<hr>
+	<p style="margin: 0;background-color: #222;text-shadow:5px 5px 5px rgba(255,255,255,0.5);background-size:width:100%;height: 60px;text-align: center;line-height:55px;font-size:1em;color: white">
+         Copyright&nbsp;©&nbsp;2017&nbsp;hainananimals.com,All rights reserved.<a href = "http://www.miitbeian.gov.cn">琼ICP备17001532号</a>
+        </p>
+</section>
+<!-- /Footer Section -->
+	<!-- Back To Top -->
+	<a href="#0" class="cd-top">Top</a>
+	<!-- /Back To Top -->
+	<script type="text/javascript">
+		jQuery(document).ready(function($){
+			var offset = 300,
+			offset_opacity = 1200,
+			scroll_top_duration = 700,
+			$back_to_top = $('.cd-top');
+		$(window).scroll(function(){
+			( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+			if( $(this).scrollTop() > offset_opacity ) { 
+				$back_to_top.addClass('cd-fade-out');
+			}
+		});
+		$back_to_top.on('click', function(event){
+			event.preventDefault();
+			$('body,html').animate({
+				scrollTop: 0 ,
+			 	}, scroll_top_duration
+			);
+			});
+		});
+	</script>
+  </body>
+</html>
